@@ -4,8 +4,19 @@ In statistics and machine learning, many algorithms make use of gradients of fun
 
 ## The Sensor Model
 
+This sensor network localisation problem first appeared in Ihler et al, 2005, and has been analysed in other work (Pompe et al., 2020; Tak et al., 2017). There are 6 sensors on the real plane. The position of 4 sensors is unknown whilst the position of 2 sensors is known. The distance between sensors i and j is observed with probability
+$$\exp \{ - || x_i - x_j ||^2 / (2 \times 0.3^2) \}. $$
+
 ## Computing the log-density and its gradient using Adept
 
 ## Checking Automatic Differentiation against Numerical Differentation
 
 ## Example of using the gradient: Hamiltonian Monte Carlo
+
+## References
+
+Ihler, A. T., Fisher, J. W., Moses, R. L., and Willsky, A. S. (2005). Nonparametric belief propagation for self-localization of sensor networks. IEEE Journal on Selected Areas in Communications.
+
+Pompe, E., Holmes, C., Łatuszyński, K. (2020). A framework for adaptive MCMC targeting multimodal distributions. The Annals of Statistics.
+
+Tak, H., Meng, X.-L., and van Dyk, D. A. (2017). A Repelling-Attracting Metropolis Algorithm for Multimodality. Journal of Computational and Graphical Statistics.
