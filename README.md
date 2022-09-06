@@ -7,12 +7,14 @@ In statistics and machine learning, many algorithms make use of gradients of fun
 This sensor network localisation problem first appeared in Ihler et al, 2005, and has been analysed in other work (Pompe et al., 2020; Tak et al., 2017). There are 6 sensors on the real plane. The position of 4 sensors is unknown whilst the position of 2 sensors is known. The distance between sensors i and j is observed with probability
 $$\exp ( - || x_i - x_j ||^2 / (2 \times 0.3^2) ). $$
 Given that it's observed, the distance is noisy and has distribution:
-$$l(y_{ij} | x_i, x_j) \equiv N( || x_i - x_j ||, 0.02^2 ). $$
+$$l(y_{ij} | w_{ij} = 1, x_i, x_j) \equiv N( || x_i - x_j ||, 0.02^2 ). $$
+The likelihood is then the product:
+$$\prod_{i=1}^4 \prod_{j=i+1}^6 l(y_{ij} | w_{ij}, x_i, x_j) $$
 The prior distribuiton is a product of independent Gaussian distributions, each with variance 100.
 
 ## Computing the log-density and its gradient using Adept
 
-The Adept library may be used to compute gradients automatically. Suppose you have written a function to compute the log-density of the posterior using variables of type `double`. To use automatic differentiation with Adpet, for all variables whose value depends on the independent input variables (i.e. the data), replace type `double` with `adept::adouble`.
+The Adept library (http://www.met.reading.ac.uk/clouds/adept/) may be used to compute gradients automatically. Suppose you have written a function to compute the log-density of the posterior using variables of type `double`. To use automatic differentiation with Adpet, for all variables whose value depends on the independent input variables (i.e. the data), replace type `double` with `adept::adouble`.
 
 ## Checking Automatic Differentiation against Numerical Differentation
 
@@ -21,6 +23,7 @@ It's a good idea to check the correctness of your code by comparing the gradient
 ## Example of using the gradient: Hamiltonian Monte Carlo
 
 Now that the gradient may be easily computed, it may be used within gradient-based algorithms. For example, the gradient may be used to generate samples from the posterior via Hamiltonian Monte Carlo (HMC). This tutorial does not cover HMC, but we present here 1000 samples generated from the posterior using HMC.
+
 ![1000 samples generated using HMC](https://github.com/mckimmh/adept_example/blob/main/hmc_samples.png)
 
 ## References
