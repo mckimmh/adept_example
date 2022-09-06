@@ -22,7 +22,8 @@ The Adept library (http://www.met.reading.ac.uk/clouds/adept/) may be used to co
 
 ## Checking Automatic Differentiation against Numerical Differentation
 
-It's a good idea to check the correctness of your code by comparing the gradient computed using automatic differentiation to the gradient computed using numeric differentiation.
+It's a good idea to check the correctness of your code by comparing the gradient computed using automatic differentiation to the gradient computed using numeric differentiation. The approximates the derivative as, for $\epsilon > 0$ a small constant:
+$$d/dx \pi(x) = \frac{ \pi(x+\epsilon) - \pi(x) }{ \epsilon }.$$
 
 ## Example of using the gradient: Hamiltonian Monte Carlo
 
