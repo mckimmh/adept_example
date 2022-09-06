@@ -20,7 +20,8 @@ It's a good idea to check the correctness of your code by comparing the gradient
 
 ## Example of using the gradient: Hamiltonian Monte Carlo
 
-Now that the gradient may be easily computed, it may be used within gradient-based algorithms. For example, the gradient may be used to generate samples from the posterior via Hamiltonian Monte Carlo (HMC). This tutorial does not cover HMC, but we present here samples generated from the posterior using HMC.
+Now that the gradient may be easily computed, it may be used within gradient-based algorithms. For example, the gradient may be used to generate samples from the posterior via Hamiltonian Monte Carlo (HMC). This tutorial does not cover HMC, but we present here 1000 samples generated from the posterior using HMC.
+![1000 samples generated using HMC](https://github.com/mckimmh/adept_example/blob/main/hmc_samples.png)
 
 ## References
 
