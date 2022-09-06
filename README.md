@@ -4,12 +4,16 @@ In statistics and machine learning, many algorithms make use of gradients of fun
 
 ## The Sensor Model
 
-This sensor network localisation problem first appeared in Ihler et al, 2005, and has been analysed in other work (Pompe et al., 2020; Tak et al., 2017). There are 6 sensors on the real plane. The position of 4 sensors is unknown whilst the position of 2 sensors is known. The distance between sensors i and j is observed with probability
+This sensor network localisation problem first appeared in Ihler et al, 2005, and has been analysed in other work (Pompe et al., 2020; Tak et al., 2017). There are 6 sensors on the real plane. The position of 4 sensors is unknown whilst the position of 2 sensors is known. The distance between sensors i and j is observed with probability:
 $$\exp ( - || x_i - x_j ||^2 / (2 \times 0.3^2) ). $$
-Given that it's observed, the distance is noisy and has distribution:
-$$l(y_{ij} | w_{ij} = 1, x_i, x_j) \equiv N( || x_i - x_j ||, 0.02^2 ). $$
+Variables $w_{ij}$ encode whether the ditance between sensor $i$ and sensor $j$ is observed ($w_{ij}=1$) or not ($w_{ij}=0$). Given that it's observed, the distance is noisy and has distribution:
+$$N( || x_i - x_j ||, 0.02^2 ). $$
 The likelihood is then the product:
-$$\prod_{i=1}^4 \prod_{j=i+1}^6 l(y_{ij} | w_{ij}, x_i, x_j) $$
+$$\prod_{i=1}^4 \prod_{j=i+1}^6 l(x_i, x_j | w_{ij}, y_{ij})$$
+where
+$$l(x_i, x_j | w_{ij} = 1, y_{ij}) =  \exp ( - || x_i - x_j ||^2 / (2 \times 0.3^2) ) \exp ( - (y_{ij} - || x_ - x_j ||^2 / (2 \times 0.02^2 ) $$
+and
+$$l(x_i, x_j | w_{ij} = 0, y_{ij}) = 1 - \exp ( - || x_i - x_j ||^2 / (2 \times 0.3^2) ).$$
 The prior distribuiton is a product of independent Gaussian distributions, each with variance 100.
 
 ## Computing the log-density and its gradient using Adept
