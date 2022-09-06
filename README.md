@@ -5,7 +5,7 @@ In statistics and machine learning, many algorithms make use of gradients of fun
 ## The Sensor Model
 
 This sensor network localisation problem first appeared in Ihler et al, 2005, and has been analysed in other work (Pompe et al., 2020; Tak et al., 2017). There are 6 sensors on the real plane. The position of 4 sensors is unknown whilst the position of 2 sensors is known. The distance between sensors i and j is observed with probability:
-$$\exp ( - \frac{|| x_i - x_j ||^2}{2 \times 0.3^2} ). $$
+$$\exp \left( - \frac{|| x_i - x_j ||^2}{2 \times 0.3^2} \right). $$
 Variables $w_{ij}$ encode whether the ditance between sensor $i$ and sensor $j$ is observed ($w_{ij}=1$) or not ($w_{ij}=0$). Given that it's observed, the distance is noisy and has distribution:
 $$N( || x_i - x_j ||, 0.02^2 ). $$
 The likelihood is then the product:
