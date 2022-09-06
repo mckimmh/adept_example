@@ -7,6 +7,7 @@ In statistics and machine learning, many algorithms make use of gradients of fun
 This sensor network localisation problem first appeared in Ihler et al, 2005, and has been analysed in other work (Pompe et al., 2020; Tak et al., 2017). There are 6 sensors on the real plane. The position of 4 sensors is unknown whilst the position of 2 sensors is known. The distance between sensors i and j is observed with probability
 $$\exp ( - || x_i - x_j ||^2 / (2 \times 0.3^2) ). $$
 Given that it's observed, the distance is noisy and has distribution:
+$$y_{ij}$$
 $$ y_{ij} ~ N( || x_i - x_j ||, 0.02^2 ). $$
 The prior distribuiton is a product of independent Gaussian distributions, each with variance 100.
 
