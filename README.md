@@ -29,11 +29,13 @@ $$\frac{ \pi(x+\epsilon) - \pi(x) }{ \epsilon }.$$
 
 ## Example of using the gradient: Hamiltonian Monte Carlo
 
-Now that the gradient may be easily computed, it may be used within gradient-based algorithms. For example, the gradient may be used to generate samples from the posterior via Hamiltonian Monte Carlo (HMC). This tutorial does not cover HMC, but we present here 1000 samples generated from the posterior using HMC.
+Now that the gradient may be easily computed, it may be used within gradient-based algorithms. For example, the gradient may be used to generate samples from the posterior via Hamiltonian Monte Carlo (HMC) (Duane et al., 1987). This tutorial does not cover HMC, but we present here 1000 samples generated from the posterior using HMC.
 
 ![1000 samples generated using HMC](https://github.com/mckimmh/adept_example/blob/main/hmc_samples.png)
 
 ## References
+
+Duane, S., Kennedy, A.D., Pendleton, B.J., Rowether, D. (1987). Hybrid Monte Carlo. Physics Letters B.
 
 Ihler, A. T., Fisher, J. W., Moses, R. L., and Willsky, A. S. (2005). Nonparametric belief propagation for self-localization of sensor networks. IEEE Journal on Selected Areas in Communications.
 
