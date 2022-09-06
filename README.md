@@ -11,9 +11,9 @@ $$N( || x_i - x_j ||, 0.02^2 ). $$
 The likelihood is then the product:
 $$\prod_{i=1}^4 \prod_{j=i+1}^6 l(x_i, x_j | w_{ij}, y_{ij})$$
 where
-$$l(x_i, x_j | w_{ij} = 1, y_{ij}) =  \exp ( - \frac{ || x_i - x_j ||^2 }{ 2 \times 0.3^2 } ) \exp ( - \frac{ y_{ij} - || x_i - x_j ||)^2 }{ 2 \times 0.02^2 } ) $$
+$$l(x_i, x_j | w_{ij} = 1, y_{ij}) =  \exp \left( - \frac{ || x_i - x_j ||^2 }{ 2 \times 0.3^2 } \right) \exp \left( - \frac{ y_{ij} - || x_i - x_j ||)^2 }{ 2 \times 0.02^2 } \right) $$
 and
-$$l(x_i, x_j | w_{ij} = 0, y_{ij}) = 1 - \exp ( - \frac{ || x_i - x_j ||^2 }{ 2 \times 0.3^2} ).$$
+$$l(x_i, x_j | w_{ij} = 0, y_{ij}) = 1 - \exp \left( - \frac{ || x_i - x_j ||^2 }{ 2 \times 0.3^2} \right).$$
 The prior distribuiton is a product of independent Gaussian distributions, each with variance 100.
 
 ## Computing the log-density and its gradient using Adept
